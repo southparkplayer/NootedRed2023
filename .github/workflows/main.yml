@@ -17,7 +17,7 @@ jobs:
     env:
       JOB_TYPE: BUILD
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: "recursive"
       - name: CI Bootstrap
@@ -31,7 +31,7 @@ jobs:
       - run: xcodebuild -configuration Release
 
       - name: Upload to Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Artifacts
           path: build/*/*.zip
@@ -50,7 +50,7 @@ jobs:
     env:
       JOB_TYPE: ANALYZE
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: "recursive"
       - name: CI Bootstrap
